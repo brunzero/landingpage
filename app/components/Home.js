@@ -15,6 +15,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-wrapper">
+        <Header size="fullheight" color = "palette1" title = "boilerplate" textcolor = "white" headertitle = "boilerplate"/>
       </div>
     );
   }
