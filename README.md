@@ -1,10 +1,8 @@
-# portfolio
-#### i tinker with stuff here
+# react boilerplate
+#### i've included all the things i need to quickly start up a react project using
 
-### working APIs:
-
-- pokemon: https://pokeapi.co/ 
-- music recognition: https://www.acrcloud.com/
-- weather: https://www.wunderground.com/
-- manga: https://market.mashape.com/doodle/manga-scraper
+## bulma.io
+## socket.io
+## node/express
+## other stuff
 
