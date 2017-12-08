@@ -1,0 +1,140 @@
+@mixin sprite($url, $width:30px, $height:48px){
+  display: inline-block;
+  min-width: $width !important;
+  min-height: $height !important;
+  background-image: url("/resources/gifs/"+$url+".gif");
+  background-size: 100% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 10px;
+  padding: unset;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: auto;
+  font-size: 32px;
+  z-index: 2;
+}   
+
+.terra{
+  @include sprite('terrablink');
+  &:hover{
+    @include sprite('terrawink');
+  }
+  &:active{
+    @include sprite('terraopera', 38px, 48px);
+  }
+}
+.sabin{
+  @include sprite('sabinblink');
+  &:hover{
+    @include sprite('sabincast');
+  }
+  &:active{
+    @include sprite('sabinouch');
+  }
+}
+.locke{
+  @include sprite('lockefinger');
+  &:hover{
+    @include sprite('lockelaugh');
+  }
+  &:active{
+    @include sprite('lockeshocked');
+  }
+}
+.edgar{
+  @include sprite('edgarfinger');
+  &:hover{
+    @include sprite('edgarcast');
+  }
+  &:active{
+    @include sprite('edgarhit');
+  }
+}
+  .celes{
+    @include sprite('celesfinger');
+    &:hover{
+      @include sprite('celeslaugh');
+    }
+    &:active{
+      @include sprite('celesshock');
+    }
+  }
+  .shadow{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .cyan{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .gau{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .setzer{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .mog{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .strago{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .relm{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .gogo{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }
+  .umaro{
+    &:hover{
+
+    }
+    &:active{
+
+    }
+  }

@@ -3,16 +3,12 @@ import Hero from './Hero';
 import Column from './Column';
 import Header from './Header';
 import SVG from './SVG';
-import Rubbable from './rubbable';
 
 if(process.env.BROWSER)
 {
   require('./Home.scss');
 }
 
-var rub; 
-var canvas;
-var toggle;
 class Home extends React.Component {
   componentDidMount(){
   }
@@ -47,38 +43,28 @@ class Home extends React.Component {
             <img className="background"/>
           </div>
           <div className="logo-wrapper">
-            <div className="left">
-              <div className="click">
+            <div className="top">
                 <div className="terra"/>
-                Buy
-              </div>
-              <div className="click">
+                <div className="locke"/>
+                <div className="edgar"/>
                 <div className="sabin"/>
-                Sell
-              </div>
-              <div className="click">
-              </div>
-              <div className="click">
-              </div>
+                <div className="cyan"/>
+                <div className="celes"/>
+                <div className="shadow"/>
+                <div className="gau"/>
+                <div className="setzer"/>
+                <div className="mog"/>
+                <div className="strago"/>
+                <div className="relm"/>
+                <div className="gogo"/>
+                <div className="umaro"/>
             </div>
             <div className="middle">
               <div className="fflogo"/>
               <span className="on"> Meets </span>
               <div className="switchlogo"/>
             </div>
-            <div className="right">
-              <div className="click">
-                <div className="terra"/>
-                Buy
-              </div>
-              <div className="click">
-                <div className="sabin"/>
-                Sell
-              </div>
-              <div className="click">
-              </div>
-              <div className="click">
-              </div>  
+            <div className="bottom">
             </div>
           </div>
         </div>

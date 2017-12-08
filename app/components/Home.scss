@@ -1,21 +1,12 @@
 @import './Colors.scss';
 @import './Sizes.scss';
+@import './Sprites.scss';
 
 @font-face{
   font-family: ff6;
   src: url('/resources/fonts/ff6font.woff');
 }
 
-@mixin sprite($url, $width, $height){
-  display: inline-block;
-  min-width: $width !important;
-  min-height: $height !important;
-  background-image: url($url);
-  background-size: 100% 100%;
-  background-position: right;
-  background-repeat: no-repeat;
-  z-index: 9999;
-}
 
 @mixin logo($url, $width, $height){
   //display: inline-block;
@@ -135,54 +126,22 @@ html,body{
   .logo-wrapper{
     display: flex;
     align-content: center;
-    flex-flow: row;
+    flex-flow: column;
+    justify-content: center;
     margin-top: -85vh;
-    margin-left: 26vw;
-    border-radius: 30px;
-    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.80);
+    //margin-left: 26vw;
+    width: 100%;
+    //border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.90);
     position: absolute;
     background-color: rgba(255, 255, 255, .85);
-    .left{
-      width: 120px;
+    .top{
+      position: absolute;
+      top: 0;
       display: flex;
       flex-flow: row;
       justify-content: flex-start;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      .click{
-        margin: 10px;
-        padding: unset;
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        height: auto;
-        font-size: 32px;
-        cursor: pointer;
-        &:hover{
-          .terra{
-            @include sprite('/resources/gifs/terrawink.gif', 30px, 48px);
-          }
-          .sabin{
-            @include sprite('/resources/gifs/sabincast.gif', 30px, 48px);
-          }
-        }
-        &:active{
-          .terra{
-            @include sprite('/resources/gifs/terraopera.gif', 38px, 48px);
-          }
-          .sabin{
-            @include sprite('/resources/gifs/sabinouch.gif', 30px, 48px);
-          }
-        }
-        .terra{
-          @include sprite('/resources/gifs/terrablink.gif', 30px, 48px);
-        }
-        .sabin{
-          @include sprite('/resources/gifs/sabinblink.gif', 30px, 48px);
-        }
-      }
+      align-items: flex-start;      
     }
     .middle{
       display: flex;
@@ -205,56 +164,14 @@ html,body{
       }
     }
     .right{
-      width: 120px;
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      .click{
-        margin: 10px;
-        padding: unset;
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        height: auto;
-        font-size: 32px;
-        cursor: pointer;
-        &:hover{
-          .terra{
-            @include sprite('/resources/gifs/terrawink.gif', 30px, 48px);
-          }
-          .sabin{
-            @include sprite('/resources/gifs/sabincast.gif', 30px, 48px);
-          }
-        }
-        &:active{
-          .terra{
-            @include sprite('/resources/gifs/terraopera.gif', 38px, 48px);
-          }
-          .sabin{
-            @include sprite('/resources/gifs/sabinouch.gif', 30px, 48px);
-          }
-        }
-        .terra{
-          @include sprite('/resources/gifs/terrablink.gif', 30px, 48px);
-        }
-        .sabin{
-          @include sprite('/resources/gifs/sabinblink.gif', 30px, 48px);
-        }
-      }
     }
   }
   .overlay{  
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(top, black 0%, red 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(top, black 0%, red 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     background: -webkit-linear-gradient(top, black 0%, red 100%); /* Chrome10-25,Safari5.1-6 */
-    //background-color: red;
-    opacity: 1;
-    //z-index: 6;
+    opacity: .7;
   }
 }
 
