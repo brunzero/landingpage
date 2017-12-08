@@ -23,19 +23,26 @@ class Home extends React.Component {
           <div className="icecliff"/>
           <div className="imperialcamp"/>
           <div className="zozo"/>
-          <div className="message-container">
-            <span className="message message1 typewriter">
-              1000 years after the great demon war
-            </span>
-          </div>
+          <span className="message message1 typewriter">
+            The Great Demon War...<br/>
+            Long ago, after this conflict ended,<br/>
+            The power of "Magic" simply vanished.<br/>
+          </span>
           <span className="message message2 typewriter">
-            People have developed iron, gunpowder, and steam engines
+            10,000 years have passed...<br/>
+            With iron, gunpowder, and steam engines,<br/>
+            people have used machinery<br/>
+            to revive the world.<br/>
           </span>
           <span className="message message3 typewriter">
-            to restore the world
+            But now, the legendary power of "Magic"<br/>
+            has been revived secretly,<br/>
+            and a group has risen that intends<br/>
+            to control the world with this power.<br/>
           </span>
           <span className="message message4 typewriter">
-            But now, the power of magic has been secretly revived
+            Is mankind on the verge of repeating<br/>
+            a terrible mistake...?<br/>
           </span>
         </div>
         <div className="story2-wrapper">
@@ -61,10 +68,11 @@ class Home extends React.Component {
             </div>
             <div className="middle">
               <div className="fflogo"/>
-              <span className="on"> Meets </span>
+              <span className="on"> Coming Soon To </span>
               <div className="switchlogo"/>
             </div>
             <div className="bottom">
+              <span> Thank you for pre-ordering, Bruno</span>
             </div>
           </div>
         </div>

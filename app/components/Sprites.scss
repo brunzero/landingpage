@@ -1,4 +1,4 @@
-@mixin sprite($url, $width:30px, $height:48px){
+@mixin sprite($url, $width:32px, $height:48px){
   display: inline-block;
   min-width: $width !important;
   min-height: $height !important;
@@ -14,8 +14,8 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 35px;
+  margin-right: 38px;
   height: auto;
   font-size: 32px;
   z-index: 2;
@@ -27,7 +27,7 @@
     @include sprite('terrawink');
   }
   &:active{
-    @include sprite('terraopera', 38px, 48px);
+    @include sprite('terrashocked');
   }
 }
 .sabin{
@@ -66,75 +66,84 @@
       @include sprite('celesshock');
     }
   }
-  .shadow{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+.shadow{
+  @include sprite('shadowlaugh');
+  &:hover{
+    @include sprite('shadowvictory');
   }
-  .cyan{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+  &:active{
+    @include sprite('shadowwounded');  
   }
-  .gau{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+}
+.cyan{
+  @include sprite('cyanwave');
+  &:hover{
+    @include sprite('cyanvictory');
   }
-  .setzer{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+  &:active{
+    @include sprite('cyanshock');
   }
-  .mog{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+}
+.gau{
+  @include sprite('gaublink');
+  &:hover{
+    @include sprite('gaulaugh');
   }
-  .strago{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+  &:active{
+    @include sprite('gauangry');
   }
-  .relm{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+}
+.setzer{
+  @include sprite('setzerfinger');
+  &:hover{
+    @include sprite('setzerlaugh');
   }
-  .gogo{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+  &:active{
+    @include sprite('setzerhit');
   }
-  .umaro{
-    &:hover{
-
-    }
-    &:active{
-
-    }
+}
+.mog{
+  @include sprite('mogblink');
+  &:hover{
+    @include sprite('moglaugh');
   }
+  &:active{
+    @include sprite('moghurt');
+  }
+}
+.strago{
+  @include sprite('stragolaugh');
+  &:hover{
+    @include sprite('stragowave');
+  }
+  &:active{
+    @include sprite('stragosurprised');
+  }
+}
+.relm{
+  @include sprite('relmfinger');
+  &:hover{
+    @include sprite('relmwink');
+  }
+  &:active{
+    @include sprite('relmhit');
+  }
+}
+.gogo{
+  @include sprite('gogoblink');
+  &:hover{
+    @include sprite('gogolaugh');
+  }
+  &:active{
+    @include sprite('gogohit');
+  }
+}
+.umaro{
+  @include sprite('umarowave');
+  &:hover{
+    @include sprite('umarovictory');
+  }
+  &:active{
+    @include sprite('umarohit');
+  }
+}

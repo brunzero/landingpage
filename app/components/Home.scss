@@ -18,15 +18,14 @@
   background-repeat: no-repeat;
 }
 
+//gutted typewriter effect to make it simpler to implement
 @mixin typewriter($delay, $animlength, $fadelength){
   opacity: 0;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  text-align: center;
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
   fadeIn 2s ease-in-out $delay forwards,
-  typing $animlength steps(1000, end) $delay,
+  //typing $animlength steps(1000, end) $delay,
   fadeOut 2s linear $fadelength forwards;
 }
 
@@ -90,26 +89,30 @@ html,body{
     font-size: 42px;
   }
   .message1{
-    @include typewriter(.5s, 3.5s, 5.5s);
+    @include typewriter(0s, 3.5s, 6s);
+    width: 60%;
     top: 10%;
-    left: 1%;
+    left: 20%;
   }
   .message2{
-    @include typewriter(5.5s, 3.5s, 11.5s);
-    top: 30%;
-    left: 1%;
+    @include typewriter(6s, 3.5s, 12s);
+    width: 60%;
+    top: 35%;
+    left: 0%;
   }
   .message3{
-    @include typewriter(5.5s, 3.5s, 11.5s);
-    top: 40%;
-    left: 1%;
+    @include typewriter(12s, 3.5s, 18s);
+    width: 60%;
+    top: 35%;
+    right: 0%;
   }
   .message4{
-    @include typewriter(11.5s, 3.5s, 15.5s);
-    top: 60%;
-    left: 1%;
+    @include typewriter(18s, 3.5s, 24s);
+    width: 60%;
+    top: 70%;
+    left: 20%;
   }
-  animation: fadeOut 3.5s ease-in-out 24s forwards;
+  animation: fadeOut 6s ease-in-out 24s forwards;
 }
 
 .story2-wrapper{
@@ -117,7 +120,7 @@ html,body{
   width: 100vw;
   position: absolute;
   opacity: 0;
-  animation: fadeIn 7s ease-in-out 24s forwards;
+  animation: fadeIn 10s ease-in-out 24s forwards;
   background-color: white;
   .background{
     opacity: .7;
@@ -128,14 +131,15 @@ html,body{
     align-content: center;
     flex-flow: column;
     justify-content: center;
-    margin-top: -85vh;
+    margin-top: -92vh;
     //margin-left: 26vw;
     width: 100%;
     //border-radius: 30px;
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.90);
     position: absolute;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .55);
     .top{
+      margin-left: 12px;
       position: absolute;
       top: 0;
       display: flex;
@@ -144,6 +148,7 @@ html,body{
       align-items: flex-start;      
     }
     .middle{
+      margin-top: 35px;
       display: flex;
       justify-content: center;
       flex-flow: column;
@@ -152,6 +157,7 @@ html,body{
         margin: 20px;
         @include logo('/resources/logos/ff6logo.png', 412px, 155px);
         z-index: 3;
+        pointer-events: none;
       }
       .on{
         color: black;
@@ -163,7 +169,15 @@ html,body{
         z-index: 3;
       }
     }
-    .right{
+    .bottom{
+      span{
+        position: relative;
+        left: -40%;
+        animation: scroll 7s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      height: 68px;
     }
   }
   .overlay{  
@@ -199,5 +213,9 @@ html,body{
 @keyframes fadeOut{
   from {opacity: 1}
   to {opacity: 0}
+}
+@keyframes scroll{
+  from{left: -40%}
+  to{left: 100%}
 }
 
