@@ -37,7 +37,9 @@ class Header extends React.Component {
     let slide = this.state.slide ? 'slide' : "";
     return(
       <div className="header-wrapper">
-        <img src="/resources/icons/squareenix.gif"/>
+        <a href="https://store.na.square-enix.com/">
+          <img src="/resources/icons/squareenix.gif"/>
+        </a>
       </div>
     )      
   }
