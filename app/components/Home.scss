@@ -1,14 +1,275 @@
 @import './Colors.scss';
 @import './Sizes.scss';
 
-html,body{
+@font-face{
+  font-family: ff6;
+  src: url('/resources/fonts/ff6font.woff');
+}
+
+@mixin sprite($url, $width, $height){
+  display: inline-block;
+  min-width: $width !important;
+  min-height: $height !important;
+  background-image: url($url);
+  background-size: 100% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  z-index: 9999;
+}
+
+@mixin logo($url, $width, $height){
+  //display: inline-block;
+  width: $width;
+  height: $height;
+  background-image: url($url);
+  background-size: 100% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+@mixin typewriter($delay, $animlength, $fadelength){
+  opacity: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+  fadeIn 2s ease-in-out $delay forwards,
+  typing $animlength steps(1000, end) $delay,
+  fadeOut 2s linear $fadelength forwards;
+}
+
+@mixin background($url){
   height: 100%;
-  background-color: whitesmoke;
+  width: 100%;
+  background-image: url($url);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+
+html,body{
+  background-color: black;
+  height: 100%;
+  font-family: ff6;
+  font-size: 1.8em;
 }
 #app{
   height: 100%;
 }
 .app{
   height: 100%;
+}
+
+.story1-wrapper{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  .icecliff{
+    @include background('/resources/backgrounds/icecliff1.png');
+    animation: fadeOut 2s ease-out 6s forwards;
+  }
+  .narshe{
+    opacity: 0;
+    @include background('/resources/backgrounds/narshe1.png');
+    animation:
+      fadeIn 2s ease-in 6s forwards, 
+      fadeOut 2s ease-out 12s forwards;
+  }
+  .imperialcamp{
+    opacity: 0;
+    @include background('/resources/backgrounds/imperialcamp1.png');
+    animation: 
+      fadeIn 2s ease-in 12s forwards,
+      fadeOut 2s ease-out 18s forwards;
+  }
+  .zozo{
+    opacity: 0;
+    @include background('/resources/backgrounds/zozo1.png');
+    animation:
+      fadeIn 2s ease-in 18s forwards,
+      fadeOut 2s ease-out 24s forwards,
+  }
+  .message{
+    position: absolute;
+    color: whitesmoke;
+    border-radius: unset;
+    background-color: unset;
+    font-size: 42px;
+  }
+  .message1{
+    @include typewriter(.5s, 3.5s, 5.5s);
+    top: 10%;
+    left: 1%;
+  }
+  .message2{
+    @include typewriter(5.5s, 3.5s, 11.5s);
+    top: 30%;
+    left: 1%;
+  }
+  .message3{
+    @include typewriter(5.5s, 3.5s, 11.5s);
+    top: 40%;
+    left: 1%;
+  }
+  .message4{
+    @include typewriter(11.5s, 3.5s, 15.5s);
+    top: 60%;
+    left: 1%;
+  }
+  animation: fadeOut 3.5s ease-in-out 24s forwards;
+}
+
+.story2-wrapper{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  opacity: 0;
+  animation: fadeIn 7s ease-in-out 24s forwards;
+  background-color: white;
+  .background{
+    opacity: .7;
+    @include background('/resources/backgrounds/ff6background.jpg');
+  }
+  .logo-wrapper{
+    display: flex;
+    align-content: center;
+    flex-flow: row;
+    margin-top: -85vh;
+    margin-left: 26vw;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.80);
+    position: absolute;
+    background-color: rgba(255, 255, 255, .85);
+    .left{
+      width: 120px;
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .click{
+        margin: 10px;
+        padding: unset;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        height: auto;
+        font-size: 32px;
+        cursor: pointer;
+        &:hover{
+          .terra{
+            @include sprite('/resources/gifs/terrawink.gif', 30px, 48px);
+          }
+          .sabin{
+            @include sprite('/resources/gifs/sabincast.gif', 30px, 48px);
+          }
+        }
+        &:active{
+          .terra{
+            @include sprite('/resources/gifs/terraopera.gif', 38px, 48px);
+          }
+          .sabin{
+            @include sprite('/resources/gifs/sabinouch.gif', 30px, 48px);
+          }
+        }
+        .terra{
+          @include sprite('/resources/gifs/terrablink.gif', 30px, 48px);
+        }
+        .sabin{
+          @include sprite('/resources/gifs/sabinblink.gif', 30px, 48px);
+        }
+      }
+    }
+    .middle{
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      align-items: center;
+      .fflogo{
+        margin: 20px;
+        @include logo('/resources/logos/ff6logo.png', 412px, 155px);
+        z-index: 3;
+      }
+      .on{
+        color: black;
+        z-index: 3;
+      }
+      .switchlogo{
+        margin: 20px;
+        @include logo('/resources/logos/switchlogo.png', 160px, 200px);
+        z-index: 3;
+      }
+    }
+    .right{
+      width: 120px;
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .click{
+        margin: 10px;
+        padding: unset;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        height: auto;
+        font-size: 32px;
+        cursor: pointer;
+        &:hover{
+          .terra{
+            @include sprite('/resources/gifs/terrawink.gif', 30px, 48px);
+          }
+          .sabin{
+            @include sprite('/resources/gifs/sabincast.gif', 30px, 48px);
+          }
+        }
+        &:active{
+          .terra{
+            @include sprite('/resources/gifs/terraopera.gif', 38px, 48px);
+          }
+          .sabin{
+            @include sprite('/resources/gifs/sabinouch.gif', 30px, 48px);
+          }
+        }
+        .terra{
+          @include sprite('/resources/gifs/terrablink.gif', 30px, 48px);
+        }
+        .sabin{
+          @include sprite('/resources/gifs/sabinblink.gif', 30px, 48px);
+        }
+      }
+    }
+  }
+  .overlay{  
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(top, black 0%, red 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -webkit-linear-gradient(top, black 0%, red 100%); /* Chrome10-25,Safari5.1-6 */
+    //background-color: red;
+    opacity: 1;
+    //z-index: 6;
+  }
+}
+
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes fadeIn{
+  from{opacity: 0}
+  to{opacity: 1}
+}
+@keyframes fadeOut{
+  from {opacity: 1}
+  to {opacity: 0}
 }
 

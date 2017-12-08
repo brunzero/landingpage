@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "landingpage",
   "version": "1.0.0",
-  "description": "boilerplate with some built in bulma components",
+  "description": "landing page for ",
   "scripts": {
     "build": "webpack --display-error-details",
     "deploy": "npm test && git push heroku master",

@@ -37,44 +37,7 @@ class Header extends React.Component {
     let slide = this.state.slide ? 'slide' : "";
     return(
       <div className="header-wrapper">
-        <div className={`hero is-${size} ${color}`}>
-          <div className="hero-head">
-            <nav className="navbar" role="navigation">
-              <div className="navbar-brand">
-                <div className={`navbar-left ${slide}`}>
-                  <div className="navbar-item">
-                    <img src="/resources/icons/moogle.gif" width="32" height="32"/>
-                  </div>  
-                  <div className="navbar-item">
-                    <b><span className={`text-${textcolor}`}>{this.props.headertitle}</span></b>
-                  </div>
-                </div>
-                <div className={`navbar-burger is-${active}`} onClick={()=>this.toggleActive()}>
-                  <span/>
-                  <span/>
-                  <span/>
-                </div>
-              </div>
-              <div className={`navbar-menu is-${active}`}>
-                <div className="navbar-end">
-                  <a className="navbar-item" onClick={()=>this.routeTo('/home')}>
-                    home
-                  </a>
-                </div>
-              </div>
-            </nav>
-          </div>
-          <div className="hero-body">
-            <div className="container has-text-centered">
-              <h1 className={`title text-${textcolor}`}>
-                {title}
-              </h1>
-              <h2 className={`subtitle text-${textcolor}`}>
-                {subtitle}
-              </h2>
-            </div>
-          </div>
-        </div>
+        <img src="/resources/icons/squareenix.gif"/>
       </div>
     )      
   }
