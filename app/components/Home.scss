@@ -258,6 +258,17 @@ html,body{
   }
 }
 
+.footer{
+  font-size: 26px;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  padding: unset;
+  background-color: unset;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+}
 
 
 @keyframes typing {
