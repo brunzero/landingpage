@@ -3,20 +3,19 @@
   min-width: $width !important;
   min-height: $height !important;
   background-image: url("/resources/gifs/"+$url+".gif");
-  background-size: 100% 100%;
-  background-position: right;
+  //background-size: 100% 100%;
+  background-position-x: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  margin: 10px;
   padding: unset;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  margin-left: 35px;
-  margin-right: 38px;
   height: auto;
+  flex-grow: 1;
+  margin-top: 5px;
   font-size: 32px;
   z-index: 2;
 }   
